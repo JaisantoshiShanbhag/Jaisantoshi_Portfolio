@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyPortfolio</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 80px;
+            background-color: rgb(226, 174, 43);
+            padding-left: 50%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: beige;
+            font-weight: 600;
+            text-decoration: none;
+            margin-right: 50px;
+        }
+
+        .navbar a:hover {
+            color: black;
+            text-decoration: underline;
+        }
+
+        .home {
+            display: flex;
+            align-items: center;
+            height: 600px;
+            padding: 0 100px;
+            flex-direction: row;
+            background-color: rgb(252, 224, 158);
+            margin-top: 80px;
+        }
+
+        #pic {
+            width: 600px;
+            height: 420px;
+            margin-right: 20px;
+        }
+
+        .text-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: left;
+            font-size: 35px;
+        }
+
+        .text-content h3 {
+            font-size: 30px;
+        }
+
+        #resume {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10%;
+            background-color: rgb(226, 174, 43);
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            width: 90px;
+            height: 40px;
+        }
+
+        .aboutme {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            background-color: #fff4d6;
+            padding: 70px 20px;
+            height: 500px;
+        }
+
+        .aboutme h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .about-text {
+            max-width: 800px;
+            text-align: center;
+            font-size: 20px;
+            line-height: 1.6;
+            margin-top: 20px;
+        }
+
+        #profile {
+            border-radius: 50%;
+            height: 170px;
+        }
+
+        .education {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            background-color: rgb(252, 224, 158);
+            padding: 50px 20px;
+            height: 520px;
+        }
+
+        .education h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .journey {
+            margin-top: 20px;
+        }
+
+        .edu-box {
+            margin-top: 10px;
+            width: 650px;
+            padding: 10px;
+            border-radius: 5%;
+            border: 4px solid chocolate;
+        }
+
+        .edu-box:hover {
+            background-color: coral;
+        }
+
+        .projects {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            background-color: #fff4d6;
+            padding: 50px 20px;
+            height: auto;
+        }
+
+        .projects h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .myproject {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .project-box {
+            display: flex;
+            flex-direction: column;
+            border: 2px solid chocolate;
+            border-radius: 10px;
+            padding: 20px;
+            width: 250px;
+            background-color: #fff;
+        }
+
+        .project-box h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .project-box p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        #btn {
+            margin: 4px;
+            padding: 5px 10px;
+            background-color: chocolate;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        #btn:hover {
+            background-color: coral;
+        }
+
+        .contactme{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            background-color:  rgb(252, 224, 158);
+            padding: 50px 20px;
+            height: 300px;
+        }
+
+        .contactme h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .social{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .social a{
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border-radius: 50%;
+            font-size: 20px;
+        }
+        .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background-color: rgb(226, 174, 43);;
+}
+
+.footer-text,
+.footer-iconTop {
+    position: relative;
+}
+
+.footer-text p {
+    font-size: 1.6rem;
+}
+
+.footer-iconTop a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background-color: #fff;
+    border: .2rem solid chocolate;
+    border-radius: .6rem;
+    z-index: 1;
+    overflow: hidden;
+}
+   </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#aboutme">About Me</a> 
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            <a href="#contactme">Contact Me</a>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <img id="pic" src="./uploads/pic.png" alt="Profile Picture">
+        <div class="text-content">
+            <h1>I am Jaisantoshi Shanbhag</h1>
+            <h3>MCA Graduate, Web Developer</h3>
+            <a id="resume" href="resume.pdf" download>RESUME</a>
+        </div>
+    </section>
+
+    <section class="aboutme" id="aboutme">
+        <h2>About Me</h2>
+        <img id="profile" src="./uploads/mypic.jpg" alt="Profile Picture">
+        <div class="about-text">
+            <p>
+                Hello, I am Jaisantoshi Shanbhag, an MCA student passionate about Web Development.
+                I have proficiency in HTML, CSS, JavaScript, and PHP. I love designing user-friendly interfaces.
+                I enjoy building responsive and interactive websites using HTML, CSS, JavaScript, and Python.
+                My goal is to create innovative digital solutions that enhance user experience and accessibility.
+            </p>
+        </div>
+    </section>
+
+    <section class="education" id="education">
+        <h2>My Journey</h2>
+        <div class="journey">
+            <div class="edu-box">
+                <h3>SSLC</h3>
+                <p>GOVT COMP HIGH SCHOOL ANKOLA</p>
+                <p>Marks: 85%</p>
+            </div>
+            <div class="edu-box">
+                <h3>PUC</h3>
+                <p>GOKHALE CENTENARY PU COLLEGE ANKOLA</p>
+                <p>Marks: 86%</p>
+            </div>
+            <div class="edu-box">
+                <h3>BCA</h3>
+                <p>KAMADHENU BCA COLLEGE KARWAR</p>
+                <p>Marks: 84%</p>
+            </div>
+            <div class="edu-box">
+                <h3>MCA</h3>
+                <p>KRISTU JAYANTI COLLEGE BENGALURU</p>
+                <p>Marks: 77%</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <h2>My Projects</h2>
+        <div class="myproject">
+            <div class="project-box">
+                <h2>Aptitude Test Website</h2>
+                <p>Tools & Technologies</p>
+                <input id="btn" type="button" value="HTML">
+                <input id="btn" type="button" value="CSS">
+                <input id="btn" type="button" value="JavaScript">
+                <input id="btn" type="button" value="PHP">
+                <input id="btn" type="button" value="VS CODE">
+                <input id="btn" type="button" value="MYSQL">
+            </div>
+            <div class="project-box">
+                <h2>EV Charging Station Booking Website</h2>
+                <p>Tools & Technologies</p>
+                <input id="btn" type="button" value="HTML">
+                <input id="btn" type="button" value="CSS">
+                <input id="btn" type="button" value="JavaScript">
+                <input id="btn" type="button" value="PHP">
+                <input id="btn" type="button" value="VS CODE">
+                <input id="btn" type="button" value="MySQL">
+            </div>
+            <div class="project-box">
+                <h2>Catering Management Website </h2>
+                <p>Tools & Technologies</p>
+                <input id="btn" type="button" value="HTML">
+                <input id="btn" type="button" value="CSS">
+                <input id="btn" type="button" value="Javascript">
+                <input id="btn" type="button" value="PHP">
+                <input id="btn" type="button" value="VS CODE">
+                <input id="btn" type="button" value="MySQL">
+            </div>
+            <div class="project-box">
+                <h2>Gym Management System</h2>
+                <p>Tools & Technologies</p>
+                <input id="btn" type="button" value=".NET">
+                <input id="btn" type="button" value="Visual Studio">
+                <input id="btn" type="button" value="c#">
+                <input id="btn" type="button" value="MS SQL Server">
+            </div>
+        </div>
+    </section>
+    
+    <section class="contactme" id="contactme">
+        <h2>Contact Me</h2>
+        <h3>Email: jaisantoshishanbhag45@gmail.com</h3>
+        <h3>Phone:8431128985</h3>
+        <div class="social">
+            <a href="https://www.linkedin.com/in/jaisantoshi-shanbhag-3032732b9/"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://www.instagram.com/graceful_girl_45/"><i class='bx bxl-instagram'></i></a>
+            <a href="https://github.com/JaisantoshiShanbhag/"><i class='bx bxl-github'></i></a>
+            <span class="animate" style="--i:6;"></span>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Let's Connect!</p>
+        </div>
+
+        <div class="footer-iconTop">
+            <a href="#"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+</footer>
+</body>
+</html>
